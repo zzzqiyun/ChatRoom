@@ -6,8 +6,6 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
-import java.util.Scanner;
-
 import javax.swing.*;
 
 /**
@@ -63,7 +61,7 @@ public void readAndSend(){
     try{
     String line =null;
     while((line=keyIn.readLine())!=null) {
-      //如果读取的信息中有冒号，并且以//开头，则认为是想发送私聊消息
+      //如果读取的信息中有冒号，并且以//开头，则认为是想发送私聊消息,此处请用英文冒号
       //例如私聊aa   //aa:aa,你好，我是bb
       if(line.indexOf(":")> 0 &&line.startsWith("//")){
         line = line.substring(2);
