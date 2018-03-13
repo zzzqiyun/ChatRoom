@@ -53,7 +53,7 @@ public class ServerThread extends Thread{
         else{
           String msg = getReanMsg(line);
           for (PrintStream clientsPs:Server.clients.valueSet()) {
-            clientsPs.println(Server.clients.getKeyByVaule(ps));
+            clientsPs.println(Server.clients.getKeyByVaule(ps)+"หตฃบ"+msg);
           }
         }
       }

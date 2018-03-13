@@ -18,9 +18,9 @@ public class ClientThread extends Thread{
 
   public void run(){
 try {
-  String s = null;
-  while ((s = br.readLine()) != null) {
-    System.out.println(s);
+  String conment = null;
+  while ((conment = br.readLine()) != null) {
+    System.out.println(conment);
   }
 }catch (Exception e){
   e.printStackTrace();

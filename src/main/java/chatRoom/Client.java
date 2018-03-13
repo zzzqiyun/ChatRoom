@@ -64,9 +64,10 @@ public void readAndSend(){
     String line =null;
     while((line=keyIn.readLine())!=null) {
       //如果读取的信息中有冒号，并且以//开头，则认为是想发送私聊消息
+      //例如私聊aa   //aa:aa,你好，我是bb
       if(line.indexOf(":")> 0 &&line.startsWith("//")){
         line = line.substring(2);
-        ps.println(LogoProtocol.PRIVATE_ROUND+line.split(":")+LogoProtocol.SPLIT_SIGN+line.split(":")+LogoProtocol.PRIVATE_ROUND);
+        ps.println(LogoProtocol.PRIVATE_ROUND+line.split(":")[0]+LogoProtocol.SPLIT_SIGN+line.split(":")[1]+LogoProtocol.PRIVATE_ROUND);
       }else{
         ps.println(LogoProtocol.MSG_ROUND+line+LogoProtocol.MSG_ROUND);
       }
